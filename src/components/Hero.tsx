@@ -18,7 +18,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="text-white space-y-8 animate-fade-in-up">
             <div className="flex items-center gap-3 animate-fade-in">
-              <img src={logo} alt="LS Advocacia e Consultoria" className="h-12 md:h-14" />
+              <img src={logo} alt="LS Advocacia e Consultoria" className="h-16 md:h-20" />
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
