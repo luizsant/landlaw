@@ -1,5 +1,6 @@
 import { Award, BookOpen, Briefcase, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import certificado from "@/assets/certificado.jpg";
 
 const Authority = () => {
   const credentials = [
@@ -56,6 +57,29 @@ const Authority = () => {
               <p className="text-muted-foreground">{cred.description}</p>
             </Card>
           ))}
+        </div>
+
+        {/* Certificado */}
+        <div className="mb-16 animate-fade-in-up animation-delay-250">
+          <Card className="p-6 md:p-8 border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent">
+            <div className="flex items-center gap-3 mb-6">
+              <Award className="h-8 w-8 text-accent" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Certificação Especializada
+              </h3>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <img 
+                src={certificado} 
+                alt="Certificado de Treinamento Avançado Expert na Defesa do Executado" 
+                className="w-full h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                onClick={() => window.open(certificado, '_blank')}
+              />
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                Treinamento Avançado Expert na Defesa do Executado - AVA Brasil
+              </p>
+            </div>
+          </Card>
         </div>
 
         {/* Expertise List */}
