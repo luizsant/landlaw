@@ -1,4 +1,5 @@
-import { Scale, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <Scale className="h-8 w-8 text-accent" />
-              <span className="text-2xl font-bold">Advocacia Especializada</span>
+            <div className="mb-4">
+              <img src={logo} alt="LS Advocacia e Consultoria" className="h-16 md:h-20" />
             </div>
             <p className="text-white/80 mb-4">
               Defesa técnica e estratégica em processos de execução, cobrança e monitória.

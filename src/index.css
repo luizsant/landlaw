@@ -17,17 +17,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 215 28% 17%;
+    --primary: 218 28% 16%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 25% 95%;
-    --secondary-foreground: 215 28% 17%;
+    --secondary: 218 25% 95%;
+    --secondary-foreground: 218 28% 16%;
 
-    --muted: 215 15% 92%;
-    --muted-foreground: 215 10% 50%;
+    --muted: 218 15% 92%;
+    --muted-foreground: 218 10% 50%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 215 28% 17%;
+    --accent: 43 86% 51%;
+    --accent-foreground: 218 28% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -39,10 +39,10 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(215 28% 17%), hsl(215 28% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 66%));
-    --shadow-elegant: 0 10px 40px -10px hsl(215 28% 17% / 0.2);
-    --shadow-glow: 0 0 40px hsl(43 96% 56% / 0.15);
+    --gradient-primary: linear-gradient(135deg, hsl(218 28% 16%), hsl(218 28% 24%));
+    --gradient-accent: linear-gradient(135deg, hsl(43 86% 51%), hsl(43 86% 61%));
+    --shadow-elegant: 0 10px 40px -10px hsl(218 28% 16% / 0.2);
+    --shadow-glow: 0 0 40px hsl(43 86% 51% / 0.2);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -63,26 +63,26 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 28% 10%;
+    --background: 218 28% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 215 28% 13%;
+    --card: 218 28% 13%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 28% 13%;
+    --popover: 218 28% 13%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 215 28% 17%;
+    --primary-foreground: 218 28% 16%;
 
-    --secondary: 215 25% 20%;
+    --secondary: 218 25% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 25% 20%;
-    --muted-foreground: 215 10% 65%;
+    --muted: 218 25% 20%;
+    --muted-foreground: 218 10% 65%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 215 28% 17%;
+    --accent: 43 86% 51%;
+    --accent-foreground: 218 28% 16%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

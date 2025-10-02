@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scale } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import logo from "@/assets/logo.png";
+import advogadoPhoto from "@/assets/advogado.webp";
 
 const Hero = () => {
   return (
@@ -15,9 +17,8 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-white space-y-8 animate-fade-in-up">
-            <div className="flex items-center gap-2 text-accent animate-fade-in">
-              <Scale className="h-6 w-6" />
-              <span className="text-sm font-semibold tracking-wider uppercase">Advocacia Especializada</span>
+            <div className="flex items-center gap-3 animate-fade-in">
+              <img src={logo} alt="LS Advocacia e Consultoria" className="h-12 md:h-14" />
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -64,24 +65,19 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Photo Placeholder */}
+          {/* Right Content - Photo */}
           <div className="relative animate-fade-in-up animation-delay-200">
             <div className="relative aspect-[3/4] max-w-md mx-auto">
               {/* Decorative elements */}
               <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-2xl"></div>
               
-              {/* Photo placeholder */}
-              <div className="relative h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border-2 border-white/20 overflow-hidden shadow-[var(--shadow-elegant)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-accent/20 flex items-center justify-center">
-                      <Scale className="h-16 w-16 text-accent" />
-                    </div>
-                    <p className="text-white/60 text-sm px-8">
-                      [Insira sua foto profissional aqui]
-                    </p>
-                  </div>
-                </div>
+              {/* Photo */}
+              <div className="relative h-full rounded-2xl border-2 border-accent/30 overflow-hidden shadow-[var(--shadow-elegant)]">
+                <img 
+                  src={advogadoPhoto} 
+                  alt="Advogado Especialista" 
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Floating badge */}
