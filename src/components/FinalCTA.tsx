@@ -61,14 +61,14 @@ const FinalCTA = () => {
 
           {/* Strong CTA */}
           <div className={`pt-8 space-y-6 scroll-animate animation-delay-400 ${mainVisible ? 'visible' : ''}`}>
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col items-center">
               <Button 
                 size="lg" 
-                className="bg-accent text-primary hover:bg-accent/90 font-bold text-2xl px-16 py-8 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 w-full md:w-auto"
-            onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
+                className="bg-accent text-primary hover:bg-accent/90 font-bold text-lg md:text-2xl px-6 py-5 md:px-16 md:py-8 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 w-full md:w-auto max-w-full text-center whitespace-normal break-words leading-snug flex items-center justify-center"
+                onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
               >
-                Proteja seus direitos AGORA
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <span className="block">Proteja seus direitos AGORA</span>
+                <ArrowRight className="ml-3 h-6 w-6 shrink-0" />
               </Button>
 
               <p className="text-muted-foreground text-sm">

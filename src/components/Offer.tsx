@@ -90,10 +90,10 @@ const Offer = () => {
           <div className="text-center">
             <Button 
               size="lg" 
-              className="bg-accent text-primary hover:bg-accent/90 font-bold text-xl px-12 py-7 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105"
+              className="bg-accent text-primary hover:bg-accent/90 font-bold text-base md:text-xl px-5 py-5 md:px-10 md:py-6 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 w-full sm:w-auto max-w-full text-center whitespace-normal break-words leading-snug flex items-center justify-center"
               onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
             >
-              Solicitar Avaliação Gratuita Agora
+              <span className="block">Solicitar Avaliação Gratuita Agora</span>
             </Button>
             <p className="mt-4 text-sm text-white/70">
               Resposta em até 24 horas • Atendimento humanizado

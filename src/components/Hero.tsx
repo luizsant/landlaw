@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="bg-accent text-primary hover:bg-accent/90 font-semibold text-lg px-8 py-6 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105"
+                className="bg-accent text-primary hover:bg-accent/90 font-semibold text-lg px-6 py-5 md:px-8 md:py-6 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center whitespace-normal break-words"
                 onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
               >
                 Fale agora com o advogado
@@ -42,7 +42,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="bg-white text-primary border-2 border-white hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-8 py-6 transition-all duration-300 shadow"
+                className="bg-white text-primary border-2 border-white hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-6 py-5 md:px-8 md:py-6 transition-all duration-300 shadow w-full sm:w-auto text-center whitespace-normal break-words"
               >
                 Avaliação gratuita
               </Button>
