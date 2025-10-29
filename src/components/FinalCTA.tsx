@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Clock, AlertCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const FinalCTA = () => {
+  const { ref: mainRef, isVisible: mainVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-destructive/10 via-background to-background">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center space-y-8 animate-fade-in-up">
+        <div ref={mainRef} className={`text-center space-y-8 scroll-animate ${mainVisible ? 'visible' : ''}`}>
           {/* Alert Badge */}
           <div className="inline-flex items-center gap-2 bg-destructive/20 text-destructive px-6 py-3 rounded-full border-2 border-destructive/30">
             <AlertCircle className="h-5 w-5 animate-pulse" />
@@ -24,7 +27,7 @@ const FinalCTA = () => {
               { icon: Shield, text: "Penhora de bens" },
               { icon: AlertCircle, text: "Perda patrimonial" }
             ].map((risk, index) => (
-              <div key={index} className="bg-card p-6 rounded-xl border-2 border-destructive/20">
+              <div key={index} className={`bg-card p-6 rounded-xl border-2 border-destructive/20 scroll-animate ${mainVisible ? 'visible' : ''} ${index === 1 ? 'animation-delay-100' : index === 2 ? 'animation-delay-200' : ''}`}>
                 <risk.icon className="h-8 w-8 text-destructive mx-auto mb-3" />
                 <p className="text-foreground font-semibold">{risk.text}</p>
               </div>
@@ -32,7 +35,7 @@ const FinalCTA = () => {
           </div>
 
           {/* Urgent Message */}
-          <div className="bg-primary/5 border-l-4 border-accent p-8 rounded-r-xl text-left max-w-2xl mx-auto">
+          <div className={`bg-primary/5 border-l-4 border-accent p-8 rounded-r-xl text-left max-w-2xl mx-auto scroll-animate animation-delay-300 ${mainVisible ? 'visible' : ''}`}>
             <p className="text-xl text-foreground leading-relaxed">
               Cada dia sem uma <strong className="text-accent">defesa técnica adequada</strong> permite que:
             </p>
@@ -57,12 +60,12 @@ const FinalCTA = () => {
           </div>
 
           {/* Strong CTA */}
-          <div className="pt-8 space-y-6">
+          <div className={`pt-8 space-y-6 scroll-animate animation-delay-400 ${mainVisible ? 'visible' : ''}`}>
             <div className="space-y-4">
               <Button 
                 size="lg" 
                 className="bg-accent text-primary hover:bg-accent/90 font-bold text-2xl px-16 py-8 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 w-full md:w-auto"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+            onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
               >
                 Proteja seus direitos AGORA
                 <ArrowRight className="ml-3 h-6 w-6" />

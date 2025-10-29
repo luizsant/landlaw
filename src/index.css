@@ -9,40 +9,40 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 218 28% 16%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 222 45% 14%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 218 25% 95%;
-    --secondary-foreground: 218 28% 16%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 222 45% 14%;
 
-    --muted: 218 15% 92%;
-    --muted-foreground: 218 10% 50%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 10% 38%;
 
-    --accent: 43 86% 51%;
-    --accent-foreground: 218 28% 16%;
+    --accent: 43 96% 48%;
+    --accent-foreground: 220 30% 12%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 46%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 88%;
-    --input: 215 15% 88%;
-    --ring: 215 28% 17%;
+    --border: 220 15% 84%;
+    --input: 220 15% 84%;
+    --ring: 43 96% 50%;
 
     --radius: 0.75rem;
     
     /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(218 28% 16%), hsl(218 28% 24%));
-    --gradient-accent: linear-gradient(135deg, hsl(43 86% 51%), hsl(43 86% 61%));
-    --shadow-elegant: 0 10px 40px -10px hsl(218 28% 16% / 0.2);
-    --shadow-glow: 0 0 40px hsl(43 86% 51% / 0.2);
+    --gradient-primary: linear-gradient(135deg, hsl(222 45% 14%), hsl(222 45% 22%));
+    --gradient-accent: linear-gradient(135deg, hsl(43 96% 48%), hsl(43 96% 58%));
+    --shadow-elegant: 0 10px 40px -10px hsl(222 45% 14% / 0.22);
+    --shadow-glow: 0 0 40px hsl(43 96% 48% / 0.22);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -63,33 +63,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 218 28% 10%;
+    --background: 222 45% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 218 28% 13%;
+    --card: 222 45% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 218 28% 13%;
+    --popover: 222 45% 12%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 218 28% 16%;
+    --primary-foreground: 222 45% 14%;
 
-    --secondary: 218 25% 20%;
+    --secondary: 222 30% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 218 25% 20%;
-    --muted-foreground: 218 10% 65%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 10% 70%;
 
-    --accent: 43 86% 51%;
-    --accent-foreground: 218 28% 16%;
+    --accent: 43 96% 50%;
+    --accent-foreground: 222 45% 14%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 32%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 43 96% 56%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 43 96% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -116,6 +116,7 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Animações que rodam imediatamente (para Hero) */
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
   }
@@ -130,6 +131,44 @@ All colors MUST be HSL.
   
   .animate-slide-in-right {
     animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  /* Animações acionadas por scroll */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Delays para animações em scroll */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  
+  .animation-delay-250 {
+    animation-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    transition-delay: 0.4s;
   }
 }
 

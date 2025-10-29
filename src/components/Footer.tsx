@@ -1,11 +1,14 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Footer = () => {
+  const { ref: footerRef, isVisible: footerVisible } = useScrollAnimation();
+
   return (
     <footer className="bg-primary text-white py-12 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div ref={footerRef} className={`grid md:grid-cols-4 gap-8 mb-8 scroll-animate ${footerVisible ? 'visible' : ''}`}>
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
@@ -14,9 +17,7 @@ const Footer = () => {
             <p className="text-white/80 mb-4">
               Defesa técnica e estratégica em processos de execução, cobrança e monitória.
             </p>
-            <p className="text-sm text-white/60">
-              OAB/SP XXX.XXX - Mestre em Direito
-            </p>
+            
           </div>
 
           {/* Contact Info */}
@@ -25,15 +26,15 @@ const Footer = () => {
             <ul className="space-y-3 text-white/80 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                <span>(11) 99999-9999</span>
+                <span>(91) 99383-6796</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                <span>contato@exemplo.com</span>
+                <span>luizsantiago@luizsantiago.adv.br</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                <span>São Paulo - SP</span>
+                <span>Belém/PA</span>
               </li>
             </ul>
           </div>

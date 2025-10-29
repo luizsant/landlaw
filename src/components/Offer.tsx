@@ -1,8 +1,12 @@
 import { CheckCircle, Clock, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Offer = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardRef, isVisible: cardVisible } = useScrollAnimation();
+  const { ref: urgencyRef, isVisible: urgencyVisible } = useScrollAnimation();
   const offerings = [
     "Atendimento inicial gratuito para avaliação do processo",
     "Análise detalhada de todos os documentos do seu caso",
@@ -22,7 +26,7 @@ const Offer = () => {
       </div>
 
       <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="text-center mb-12 animate-fade-in-up">
+        <div ref={headerRef} className={`text-center mb-12 scroll-animate ${headerVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full mb-6">
             <Gift className="h-4 w-4" />
             <span className="text-sm font-semibold">Oferta Exclusiva</span>
@@ -37,7 +41,7 @@ const Offer = () => {
           </p>
         </div>
 
-        <Card className="bg-white/10 backdrop-blur-sm border-2 border-white/20 p-8 md:p-12 animate-fade-in-up animation-delay-200">
+        <Card ref={cardRef} className={`bg-white/10 backdrop-blur-sm border-2 border-white/20 p-8 md:p-12 scroll-animate animation-delay-200 ${cardVisible ? 'visible' : ''}`}>
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -87,7 +91,7 @@ const Offer = () => {
             <Button 
               size="lg" 
               className="bg-accent text-primary hover:bg-accent/90 font-bold text-xl px-12 py-7 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+              onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
             >
               Solicitar Avaliação Gratuita Agora
             </Button>
@@ -98,7 +102,7 @@ const Offer = () => {
         </Card>
 
         {/* Urgency banner */}
-        <div className="mt-10 bg-destructive/20 border-2 border-destructive/30 rounded-xl p-6 text-center animate-fade-in-up animation-delay-300">
+        <div ref={urgencyRef} className={`mt-10 bg-destructive/20 border-2 border-destructive/30 rounded-xl p-6 text-center scroll-animate animation-delay-300 ${urgencyVisible ? 'visible' : ''}`}>
           <Clock className="h-8 w-8 text-accent mx-auto mb-3" />
           <p className="text-lg font-semibold">
             Vagas limitadas para novos casos este mês

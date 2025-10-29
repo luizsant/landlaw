@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import advogadoPhoto from "@/assets/advogado.webp";
 
@@ -33,7 +33,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-accent text-primary hover:bg-accent/90 font-semibold text-lg px-8 py-6 shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+                onClick={() => window.open('https://wa.me/5591993836796', '_blank')}
               >
                 Fale agora com o advogado
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -42,7 +42,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold text-lg px-8 py-6 transition-all duration-300"
+                className="bg-white text-primary border-2 border-white hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-8 py-6 transition-all duration-300 shadow"
               >
                 Avaliação gratuita
               </Button>
@@ -51,16 +51,32 @@ const Hero = () => {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-8 pt-8 border-t border-white/20">
               <div>
-                <div className="text-3xl font-bold text-accent">10+</div>
+                <div className="text-3xl font-bold text-accent">+10</div>
                 <div className="text-sm text-white/80">Anos de experiência</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">500+</div>
-                <div className="text-sm text-white/80">Casos resolvidos</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">95%</div>
-                <div className="text-sm text-white/80">Taxa de sucesso</div>
+              <div className="relative">
+                <a 
+                  href="https://www.escavador.com/nomes/luiz-antonio-santiago-correa-11f8570d16" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative inline-block cursor-pointer transition-all duration-300 hover:scale-105"
+                  title="Clique para verificar no Escavador"
+                >
+                  <div className="relative">
+                    <div className="absolute -top-2 -right-2 bg-accent/20 rounded-full p-1 group-hover:bg-accent/30 transition-colors">
+                      <ExternalLink className="h-3 w-3 text-accent" />
+                    </div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="text-3xl font-bold text-accent group-hover:text-accent/90 transition-colors animate-pulse">+1000</div>
+                      <CheckCircle2 className="h-4 w-4 text-accent/80 group-hover:text-accent transition-colors" />
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="text-sm text-white/90 group-hover:text-white transition-colors font-medium">Processos</div>
+                      <div className="text-xs text-white/60 group-hover:text-white/80 transition-colors italic">(verificar)</div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent/40 group-hover:bg-accent transition-colors"></div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -80,13 +96,7 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 bg-accent text-primary p-6 rounded-xl shadow-[var(--shadow-glow)] animate-pulse">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Mestre</div>
-                  <div className="text-xs">em Direito</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

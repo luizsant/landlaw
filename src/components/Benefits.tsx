@@ -1,7 +1,10 @@
 import { Shield, TrendingDown, FileText, Handshake, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Benefits = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
   const benefits = [
     {
       icon: Shield,
@@ -32,7 +35,7 @@ const Benefits = () => {
   return (
     <section className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-6">
             <CheckCircle className="h-4 w-4" />
             <span className="text-sm font-semibold">Benefícios</span>
@@ -47,12 +50,11 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div ref={cardsRef} className="grid md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="p-8 hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-2 border-2 group animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`p-8 hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-2 border-2 group scroll-animate ${cardsVisible ? 'visible' : ''} ${index === 1 ? 'animation-delay-100' : index === 2 ? 'animation-delay-200' : index === 3 ? 'animation-delay-300' : ''}`}
             >
               <div className={`inline-flex p-4 rounded-xl bg-accent/10 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <benefit.icon className={`h-8 w-8 ${benefit.color}`} />
@@ -67,24 +69,6 @@ const Benefits = () => {
               </p>
             </Card>
           ))}
-        </div>
-
-        {/* Results Highlight */}
-        <div className="mt-16 bg-gradient-to-br from-accent/10 to-accent/5 p-8 md:p-12 rounded-2xl border-2 border-accent/20 animate-fade-in-up">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">70%</div>
-              <p className="text-foreground font-medium">Redução média de valores</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">85%</div>
-              <p className="text-foreground font-medium">Penhoras suspensas</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">92%</div>
-              <p className="text-foreground font-medium">Clientes satisfeitos</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

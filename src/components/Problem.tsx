@@ -1,12 +1,16 @@
 import { AlertCircle, TrendingDown, Shield } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Problem = () => {
+  const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation();
+  const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Visual */}
-          <div className="space-y-6 animate-fade-in-up">
+          <div ref={leftRef} className={`space-y-6 scroll-animate ${leftVisible ? 'visible' : ''}`}>
             <div className="relative">
               <div className="absolute inset-0 bg-destructive/10 rounded-3xl blur-3xl"></div>
               <div className="relative bg-card p-8 rounded-2xl border-2 border-destructive/20 shadow-[var(--shadow-elegant)]">
@@ -31,7 +35,7 @@ const Problem = () => {
           </div>
 
           {/* Right - Content */}
-          <div className="space-y-6 animate-fade-in-up animation-delay-200">
+          <div ref={rightRef} className={`space-y-6 scroll-animate animation-delay-200 ${rightVisible ? 'visible' : ''}`}>
             <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 rounded-full">
               <Shield className="h-4 w-4" />
               <span className="text-sm font-semibold">O Problema</span>
